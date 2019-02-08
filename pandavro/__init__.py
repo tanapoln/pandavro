@@ -6,9 +6,9 @@ import pandas as pd
 def __type_infer(t: np.dtype):
     if t == np.bool_:
         return 'boolean'
-    elif t == (np.int8 or np.int16 or np.int32 or pd.Int32Dtype or pd.Int16Dtype or pd.Int8Dtype):
+    elif t == (np.int8 or np.int16 or np.int32) or t.type == (np.int8 or np.int16 or np.int32):
         return 'int'
-    elif t == (np.int64 or pd.Int64Dtype):
+    elif t == np.int64 or t.type == np.int64:
         return 'long'
     elif t == np.float32:
         return 'float'
